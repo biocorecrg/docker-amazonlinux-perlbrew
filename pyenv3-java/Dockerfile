@@ -1,4 +1,4 @@
-FROM biocorecrg/centos-perlbrew-pyenv3:centos7
+FROM biocorecrg/amazonlinux-perlbrew-pyenv3
 
 # File Author / Maintainer
 MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>

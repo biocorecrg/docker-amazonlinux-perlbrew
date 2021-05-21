@@ -2,14 +2,14 @@
 
 set -ueo pipefail
 
-SOURCE=https://github.com/CRG-CNAG/docker-centos-perlbrew
-VARIANTS=(base pyenv pyenv3 pyenv-java pyenv3-java pyenv23 pyenv23-java gbrowse)
-BRANCHES=(centos7 centos8)
-LATEST=centos7
-BASETAG=biocorecrg/centos-perlbrew
+SOURCE=https://github.com/biocorecrg/docker-amazonlinux-perlbrew
+VARIANTS=(base pyenv pyenv3 pyenv-java pyenv3-java pyenv23 pyenv23-java)
+BRANCHES=(2)
+LATEST=2
+BASETAG=biocorecrg/amazonlinux-perlbrew
 
 TEMPDIR=$HOME/tmp
-WORKDIR=$TEMPDIR/docker-centos-perlbrew
+WORKDIR=$TEMPDIR/docker-amazonlinux-perlbrew
 
 if [ -d "$WORKDIR" ]; then
 	exit 1

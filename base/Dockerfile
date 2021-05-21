@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM amazonlinux:2
 
 # File Author / Maintainer
 MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>
