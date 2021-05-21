@@ -4,12 +4,12 @@ FROM amazonlinux:2
 MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>
 
 ARG PERLBREW_ROOT=/usr/local/perl
-ARG PERL_VERSION=5.24.1
+ARG PERL_VERSION=5.32.1
 # Enable perl build options. Example: --build-arg PERL_BUILD="--thread --debug"
 ARG PERL_BUILD=
 
 # Base Perl and builddep
-RUN yum install -y perl
+RUN yum install -y perl yum-builddep
 RUN yum-builddep -y perl
 RUN yum install -y bzip2 zip procps
 RUN yum groupinstall -y 'Development Tools'
