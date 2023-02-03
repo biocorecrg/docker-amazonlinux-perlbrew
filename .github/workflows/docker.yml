@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 env:
-  DOCKER_IMAGE_PREFIX: almalinux-perlbrew
+  DOCKER_IMAGE_PREFIX: amazonlinux-perlbrew
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
