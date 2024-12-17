@@ -1,8 +1,5 @@
 FROM amazonlinux:2
 
-# File Author / Maintainer
-MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>
-
 ARG PERLBREW_ROOT=/usr/local/perl
 ARG PERL_VERSION=5.32.1
 # Enable perl build options. Example: --build-arg PERL_BUILD="--thread --debug"
@@ -22,10 +19,12 @@ RUN bash -c '\curl -L https://install.perlbrew.pl | bash'
 ENV PATH $PERLBREW_ROOT/bin:$PATH
 ENV PERLBREW_PATH $PERLBREW_ROOT/bin
 
+RUN yum install -y perl-Devel-PatchPerl
+RUN perlbrew install-patchperl
 RUN perlbrew --notest install $PERL_BUILD perl-$PERL_VERSION
 RUN perlbrew install-cpanm
 RUN bash -c 'source $PERLBREW_ROOT/etc/bashrc'
-		
+
 ENV PERLBREW_ROOT $PERLBREW_ROOT
 ENV PATH $PERLBREW_ROOT/perls/perl-$PERL_VERSION/bin:$PATH
 ENV PERLBREW_PERL perl-$PERL_VERSION
