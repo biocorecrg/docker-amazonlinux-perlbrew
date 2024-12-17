@@ -19,6 +19,7 @@ RUN bash -c '\curl -L https://install.perlbrew.pl | bash'
 ENV PATH $PERLBREW_ROOT/bin:$PATH
 ENV PERLBREW_PATH $PERLBREW_ROOT/bin
 
+RUN yum install -y perl-ExtUtils-MakeMaker
 RUN perlbrew install-patchperl
 RUN perlbrew --notest install $PERL_BUILD perl-$PERL_VERSION
 RUN perlbrew install-cpanm
