@@ -16,7 +16,7 @@ jobs:
       fail-fast: true
       max-parallel: 1
       matrix:
-        branch: ['main']
+        branch: ['2', '2023']
         folder: ['base', 'pyenv', 'pyenv3', 'pyenv23', 'pyenv-java', 'pyenv3-java', 'pyenv23-java']
     steps:
       -

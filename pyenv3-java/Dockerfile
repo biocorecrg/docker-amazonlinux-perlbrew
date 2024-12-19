@@ -1,15 +1,10 @@
-FROM biocorecrg/amazonlinux-perlbrew-pyenv3
-
-# File Author / Maintainer
-MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>
-MAINTAINER Luca Cozzuto <lucacozzuto@gmail.com> 
+FROM biocorecrg/amazonlinux-perlbrew-pyenv3:2
 
 ARG JAVA_VERSION=1.8.0
 ARG MAVEN_VERSION=3.3.9
 
-ENV JAVA_HOME /usr/lib/jvm/java-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-openjdk
 
-# Install Redis
 RUN yum update -y
 # Install Java
 RUN yum install -y java-$JAVA_VERSION-openjdk java-$JAVA_VERSION-openjdk-devel

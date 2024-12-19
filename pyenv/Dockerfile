@@ -1,4 +1,4 @@
-FROM biocorecrg/amazonlinux-perlbrew
+FROM biocorecrg/amazonlinux-perlbrew:2
 
 # File Author / Maintainer
 MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>

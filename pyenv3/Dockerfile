@@ -1,8 +1,4 @@
-FROM biocorecrg/amazonlinux-perlbrew
-
-# File Author / Maintainer
-MAINTAINER Toni Hermoso Pulido <toni.hermoso@crg.eu>
-MAINTAINER Luca Cozzuto <lucacozzuto@gmail.com> 
+FROM biocorecrg/amazonlinux-perlbrew:2
 
 ARG PYENV_ROOT=/usr/local/python
 ARG PYTHON_VERSION=3.8.9
@@ -14,7 +10,7 @@ RUN bash -c 'curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/mas
 ENV PATH $PYENV_ROOT/bin:$PATH
 ENV PYTHON_VERSION $PYTHON_VERSION
 
-RUN yum install -y readline readline-devel sqlite sqlite-devel openssl openssl-devel openssl-libs tk-devel xz xz-devel libffi-devel findutils lib-devel bzip2 bzip2-devel
+RUN yum install -y readline readline-devel sqlite sqlite-devel openssl openssl-devel openssl-libs tk-devel xz xz-devel libffi-devel findutils zlib-devel bzip2 bzip2-devel
 
 RUN pyenv install $PYTHON_VERSION
 
