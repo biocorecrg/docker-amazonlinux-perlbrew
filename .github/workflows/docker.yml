@@ -8,8 +8,9 @@ env:
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
-    runs-on: 
-      group: perlbrew
+    runs-on: ubuntu:24.04
+    #runs-on: 
+    #  group: perlbrew
     permissions:
       packages: write
       contents: read
@@ -28,6 +29,9 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+      - name: Tune QEMU
+        run: |
+          docker run --privileged --rm tonistiigi/binfmt --uninstall qemu-* && docker run --privileged --rm tonistiigi/binfmt --install all
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
