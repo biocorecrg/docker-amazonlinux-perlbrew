@@ -8,7 +8,7 @@ env:
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
-    runs-on: ubuntu:24.04
+    runs-on: ubuntu-latest
     #runs-on: 
     #  group: perlbrew
     permissions:
@@ -63,7 +63,7 @@ jobs:
           echo "DOCKER_IMAGE_BRANCH=${{ matrix.branch }}" >> $GITHUB_ENV
         if: ${{ matrix.branch != 'main' }}
       - name: Push Docker
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           file: ./${{ matrix.folder }}/Dockerfile
           context: ./${{ matrix.folder }}
