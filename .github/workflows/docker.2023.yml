@@ -1,4 +1,4 @@
-name: Publish Docker images
+name: Publish Docker images - 2023
 on:
   workflow_dispatch:
   schedule:
