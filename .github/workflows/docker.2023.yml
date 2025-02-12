@@ -2,15 +2,15 @@ name: Publish Docker images
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * 6'
 env:
   DOCKER_IMAGE_PREFIX: amazonlinux-perlbrew
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
-    #runs-on: ubuntu-latest
-    runs-on:
-      group: perlbrew
+    runs-on: ubuntu-latest
+    # runs-on:
+    #   group: perlbrew
     permissions:
       packages: write
       contents: read
@@ -18,7 +18,7 @@ jobs:
       fail-fast: true
       max-parallel: 1
       matrix:
-        branch: ['2']
+        branch: ['2023']
         folder: ['base', 'pyenv', 'pyenv3', 'pyenv23', 'pyenv-java', 'pyenv3-java', 'pyenv23-java']
     steps:
       -
